@@ -1,0 +1,11 @@
+controllers:
+    resource:
+        path: ../src/Controller/
+        namespace: App\Controller
+    type: attribute
+
+ejercicio1:
+    resource:
+        path: ../src/Ejercicio1/
+        namespace: App\Ejercicio1
+    type: attribute
