@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Detalles de su Cita</title>
+</head>
+<body>
+<p>Estimado/a {{ patient.name }},</p>
+<p>Su cita ha sido programada con los siguientes detalles:</p>
+<ul>
+    <li>Fecha y Hora: {{ appointment.dateTime|date('Y-m-d H:i') }}</li>
+    <li>Tipo: {{ appointment.type }}</li>
+</ul>
+<p>¡Gracias por confiar en nosotros!</p>
+</body>
+</html>

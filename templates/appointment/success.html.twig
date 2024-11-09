@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cita Confirmada</title>
+</head>
+<body>
+<h1>¡Su cita ha sido programada!</h1>
+<p>Detalles:</p>
+<ul>
+    <li>Fecha y Hora: {{ appointment.dateTime|date('Y-m-d H:i') }}</li>
+    <li>Tipo: {{ appointment.type }}</li>
+</ul>
+<p>Se ha enviado un email con los detalles a su correo electrónico.</p>
+</body>
+</html>

@@ -5,7 +5,7 @@ namespace App\Ejercicio1;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class Decodificacion
+class Decoding
 {
     const PDF = "Patata,oi8,oo
                  ElMejor,oF8,Fo
@@ -15,7 +15,7 @@ class Decodificacion
                  Manolita,kju2aq,u2ka
                  PiMiEnTo,_-/.!#,#_";
 
-    #[Route('/decodificacion', name: 'decodificacion')]
+    #[Route('/decoding', name: 'decoding')]
     public function index(): Response {
         $lines = explode("\n", self::PDF);
 
