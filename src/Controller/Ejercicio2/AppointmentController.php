@@ -17,7 +17,7 @@ use Symfony\Component\Lock\Store\FlockStore;
 
 class AppointmentController extends AbstractController
 {
-    #[Route('/appointment', name: 'appointment_form')]
+    #[Route(['/', '/appointment'], name: 'appointment_form')]
     public function index(): Response
     {
         return $this->render('appointment/form.html.twig');
