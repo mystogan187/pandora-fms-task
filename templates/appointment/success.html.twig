@@ -2,14 +2,85 @@
 <html>
 <head>
     <title>Cita Confirmada</title>
+    <style>
+        body, html {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .confirmation-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 300px;
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        p, ul {
+            margin: 10px 0;
+            padding: 0;
+            text-align: left;
+            width: 100%;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        ul li {
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            text-align: center;
+        }
+
+        .button-container a:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
-<h1>¡Su cita ha sido programada!</h1>
-<p>Detalles:</p>
-<ul>
-    <li>Fecha y Hora: {{ appointment.dateTime|date('Y-m-d H:i') }}</li>
-    <li>Tipo: {{ appointment.type }}</li>
-</ul>
-<p>Se ha enviado un email con los detalles a su correo electrónico.</p>
+<div class="confirmation-container">
+    <h1>¡Su cita ha sido programada!</h1>
+    <p>Detalles:</p>
+    <ul>
+        <li>Fecha y Hora: {{ appointment.dateTime|date('Y-m-d H:i') }}</li>
+        <li>Tipo: {{ appointment.type }}</li>
+    </ul>
+    <p>Se ha enviado un email con los detalles a su correo electrónico.</p>
+
+    <div class="button-container">
+        <a href="{{ path('appointment_form') }}">Volver a Reservar</a>
+    </div>
+</div>
 </body>
 </html>

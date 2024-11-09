@@ -7,8 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const dni = dniInput.value;
         if (dni) {
             const xhr = new XMLHttpRequest();
-            xhr.open('POST', '/appointment/check-dni', true);
-            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.open('GET', `${checkDniUrl}?dni=${encodeURIComponent(dni)}`, true);
 
             xhr.onload = function() {
                 if (xhr.status === 200) {
@@ -29,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             };
 
-            xhr.send('dni=' + encodeURIComponent(dni));
+            xhr.send();
         }
     });
 

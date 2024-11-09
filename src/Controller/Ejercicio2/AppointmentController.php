@@ -23,10 +23,10 @@ class AppointmentController extends AbstractController
         return $this->render('appointment/form.html.twig');
     }
 
-    #[Route('/appointment/check-dni', name: 'check_dni', methods: ['POST'])]
+    #[Route('/appointment/check-dni', name: 'check_dni', methods: ['GET'])]
     public function checkDni(Request $request, EntityManagerInterface $em): Response
     {
-        $dni = $request->request->get('dni');
+        $dni = $request->query->get('dni');
 
         $patient = $em->getRepository(Patient::class)->findOneBy(['dni' => $dni]);
 
